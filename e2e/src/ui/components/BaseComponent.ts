@@ -1,9 +1,0 @@
-import { Page } from '@playwright/test';
-
-export abstract class BaseComponent {
-  page: Page;
-
-  protected constructor(page: Page) {
-    this.page = page;
-  }
-}
