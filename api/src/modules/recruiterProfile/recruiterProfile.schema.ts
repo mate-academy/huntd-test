@@ -24,6 +24,7 @@ export const RecruiterProfileSchema = gql`
     updateRecruiterProfile(
       position: String
       companyName: String
+      city: String 
     ): RecruiterProfile!
 
     sendRecruiterProfileToReview: RecruiterProfile!
@@ -63,6 +64,7 @@ export const RecruiterProfileSchema = gql`
     lastActionTime: GraphQLDateTime
     statusesNotificationSentAt: GraphQLDateTime
     activeConnectionWithCandidate(candidateProfileId: Int!): ProfileConnection
+    city: String
   }
 
   input ReportOfferStatusValues {

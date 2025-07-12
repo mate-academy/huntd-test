@@ -10,28 +10,26 @@ import styles from './ProfileMeta.module.scss';
 interface Props {
   items: RecruiterMetaItem[] | CandidateMetaItem[]
 }
+
 export const ProfileMeta = React.memo<Props>((props) => {
   const { items } = props;
 
   return (
     <ul className={styles.metaWrapper}>
       {items.map((item) => {
-        if (item.name === CandidateProfileMetaItems.Location) {
-          return (
-            <React.Fragment key={item.name}>
-              <IconLocation />
-              <li className={cn(styles.metaItem, typography.smallText, 'c-semidark-chocolate')}>
-                {item.text}
-                <span className={styles.divider} />
-              </li>
-            </React.Fragment>
-          );
+        let icon = null;
+        if (
+          item.name === CandidateProfileMetaItems.Location ||
+          item.name === RecruiterProfileMetaItems.Location
+        ) {
+          icon = <IconLocation />;
         }
 
         return (
           <li className={cn(styles.metaItem, typography.smallText, 'c-semidark-chocolate')} key={item.name}>
+            {icon}
             {item.text}
-            <span className={styles.divider} />
+            {items.indexOf(item) !== items.length - 1 && <span className={styles.divider} />}
           </li>
         );
       })}
