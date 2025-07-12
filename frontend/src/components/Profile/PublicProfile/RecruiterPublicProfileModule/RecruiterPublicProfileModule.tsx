@@ -6,10 +6,12 @@ import ProfilePreview
 import typography from '@/ui/typography/typography.module.scss';
 import { ProfileMeta } from '@/components/Profile/ProfilePreview/ProfileMeta';
 import { ProfileInfo } from '@/components/Profile/ProfilePreview/ProfileInfo';
+import { IconLocation } from '@/ui/icons/IconLocation';
 import { RecruiterProfile, RecruiterProfileStatus } from '@/controllers/graphql/generated';
 import { Loader } from '@/ui/Loader';
 import { useRecruiterProfileMetaItems } from '@/controllers/recruiterProfile/recruiterProfile.hooks.ts/useRecruiterProfileMetaItems';
 import { useRecruiterProfileInfoItems } from '@/controllers/recruiterProfile/recruiterProfile.hooks.ts/useRecruiterProfileInfotems';
+import styles from '@/components/Profile/PublicProfile/RecruiterPublicProfileModule/RecruiterPublicProfileModule.module.scss';
 
 interface Props {
   profile?: RecruiterProfile | null;
@@ -49,6 +51,8 @@ export const RecruiterPublicProfileModule = memo<Props>(
                 <div className={ProfilePreview.profileMeta}>
                   <ProfileMeta items={profileMetaItems} />
                 </div>
+
+                
               </div>
             </div>
           </div>

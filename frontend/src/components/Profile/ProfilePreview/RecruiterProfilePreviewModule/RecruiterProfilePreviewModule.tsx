@@ -92,4 +92,7 @@ export const RecruiterProfilePreviewModule = () => {
       </div>
     </div>
   );
+
+  console.log('Profile city:', profile.city);
+  console.log('User city:', profile.user?.city);
 };

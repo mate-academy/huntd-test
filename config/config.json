@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "dev",
+    "password": "772184",
+    "database": "huntd_development",
+    "host": "db",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "dev",
+    "password": "772184",
+    "database": "database_test",
+    "host": "db",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "dev",
+    "password": "772184",
+    "database": "database_production",
+    "host": "db",
+    "dialect": "postgres"
+  }
+}

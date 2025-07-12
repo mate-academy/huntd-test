@@ -14,6 +14,12 @@
   {
     "language": "en",
     "namespace": "common",
+    "code": "location_sign",
+    "value": "location_sign"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
     "code": "remote_web3_jobs_seo_link",
     "value": "remote_web3_jobs_seo_link"
   },
@@ -64,6 +70,18 @@
     "namespace": "common",
     "code": "web3_companies_title",
     "value": "web3_companies_title"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "city_label",
+    "value": "city_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "city_placeholder",
+    "value": "city_placeholder"
   },
   {
     "language": "en",
@@ -332,8 +350,20 @@
   {
     "language": "en",
     "namespace": "profile",
+    "code": "city",
+    "value": "city"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
     "code": "recruiter_profile_companyinfo_tab",
     "value": "recruiter_profile_companyinfo_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "Email is already taken",
+    "value": "Email is already taken"
   },
   {
     "language": "en",
