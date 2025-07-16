@@ -40,6 +40,12 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
   })
   status: RecruiterProfileStatusEnum;
 
+  @AllowNull(true)
+  @Column({
+    type: DataType.STRING,
+  })
+  city: string;
+
   @Column({
     field: 'reject_reason',
   })
