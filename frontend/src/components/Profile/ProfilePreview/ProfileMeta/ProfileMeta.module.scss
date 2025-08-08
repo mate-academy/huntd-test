@@ -16,6 +16,12 @@
   }
 }
 
+.metaWrapper [class*='icon-']{
+  width: var(--icon-size, 1.5rem) !important;
+  height: var(--icon-size, 1.5rem) !important;
+}
+
+
 .baseItem {
   color: currentColor;
 }
