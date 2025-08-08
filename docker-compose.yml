@@ -14,7 +14,6 @@ services:
     depends_on:
       - api
       - frontend
-      - cms
       - db
     volumes:
       - ./nginx:/etc/nginx:cached
@@ -26,32 +25,6 @@ services:
     image: redis:5.0
     ports:
       - '6379:6379'
-
-  ################################# CMS ################################
-  # strapi cms
-  cms:
-    restart: always
-    command: ["./wait-for-it.sh", "api:4000/healthz", "npm", "run", "dev", "-- --watch-admin"]
-    build:
-      context: ./cms
-      args:
-        - APP_ENV=${APP_ENV}
-        - NPM_TOKEN=${NPM_TOKEN}
-    image: huntd/huntd-cms:${TAG}
-    ports:
-      - 1337:1337
-      - 8000:8000
-    depends_on:
-      - api
-    env_file:
-      - .env
-    volumes:
-      - ./cms:/usr/src/cms:cached
-      # monkey patch to disable host check in webpack dev server (use local.huntd.tech for admin development)
-      - ./cms/overwrites/strapi-admin/index.js:/usr/src/cms/node_modules/strapi-admin/index.js:cached
-      - /usr/src/cms/node_modules
-      - /usr/src/cms/.cache
-      - /usr/src/cms/build
 
   # ################################ API ################################
   # sequelize + graphql wrapper over postgres database
