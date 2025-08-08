@@ -1,6 +1,6 @@
 # Huntd public
 
-Anonymous job search in IT(public version).
+Anonymous job search in IT (public version).
 
 ## Setup environment
 
@@ -8,26 +8,26 @@ Anonymous job search in IT(public version).
 
 2. Clone repository:
     ```bash
-   git clone git@github.com:mate-academy/huntd-public.git
+   git clone git@github.com:mate-academy/huntd-test.git
    ```
 3. Setup local `.env` file
   - Run `make init` to copy `.env.sample` -> `.env`
   - Insert on the 4th line the NPM_TOKEN you were given
 4. Install dependencies (node modules) for primary services locally(make sure correct node version is used, check .nvmrc file):
     ```bash
-    npm install # in root, ./frontend, ./api, ./cms
+    npm install # in root, ./frontend, ./api
     ```
 
 ## Run project
 
-To run the project run following command in the root directory(INSERT NPM TOKEN INTO MAKEFILE BEFORE RUNNING IT):
+To run the project run following command in the root directory (INSERT NPM TOKEN INTO MAKEFILE BEFORE RUNNING IT):
 ```bash
   make up
 ```
 
 After project has started up it should be accessible at `http://localhost:3000`
 
-Project contains following services combined in `docker-compose`:
+Project contains following services combined in `docker compose`:
 - **API:**
     - Codebase: './api'
     - Graphql endpoint: `http://localhost:4000/graphql`
@@ -46,13 +46,11 @@ Project contains following services combined in `docker-compose`:
 
     [NextJS](https://nextjs.org) is used for serving UI on Huntd. Complete official [guide](https://nextjs.org/learn) and read the [docs](https://nextjs.org/docs) to get familiar with NextJS features.
 
-- **CMS:**
+- **CMS (Production only - not required for test assignment):**
     - Codebase: './cms'
     - Homepage: `https://local.hutnd.tech/admin`
 
-  [Strapi](https://strapi.io) is used as a CMS on Huntd. Read official [docs](https://strapi.io/documentation) to get familiar with strapi features.
-
-  On Huntd it's possible to use Typescript in Strapi while developing custom plugins even despite TS is not supported officially.
+  [Strapi](https://strapi.io) is used as a CMS on Huntd in production. This service is not included in the local development setup for the test assignment.
 
 - **NGINX:**
     - Codebase: './nginx'
