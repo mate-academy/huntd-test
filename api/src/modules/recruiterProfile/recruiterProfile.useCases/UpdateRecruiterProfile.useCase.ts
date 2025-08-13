@@ -7,6 +7,7 @@ import { RecruiterProfileEntity } from '@/modules/recruiterProfile/RecruiterProf
 export interface UpdateRecruiterProfileUseCaseOptions {
   position: string
   companyName: string
+  city?: string
 }
 export type UpdateRecruiterProfileUseCaseResult = RecruiterProfile;
 
