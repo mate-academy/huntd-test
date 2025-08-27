@@ -168,6 +168,7 @@ export type MutationCreateRecruiterProfileArgs = {
   userId: Scalars['Int'];
   position: Scalars['String'];
   companyName: Scalars['String'];
+  city?: Maybe<Scalars['String']>;
 };
 
 
@@ -545,6 +546,7 @@ export type MutationUpdateProfileContactsArgs = {
 export type MutationUpdateRecruiterProfileArgs = {
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
 };
 
 
@@ -998,6 +1000,7 @@ export type RecruiterProfile = {
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
   statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
   activeConnectionWithCandidate?: Maybe<ProfileConnection>;
+  city?: Maybe<Scalars['String']>;
 };
 
 
@@ -1549,7 +1552,7 @@ export type JobExperienceBaseFragment = (
 
 export type RecruiterProfileBaseFragment = (
   { __typename?: 'RecruiterProfile' }
-  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'slug' | 'lastActionTime'>
+  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'slug' | 'lastActionTime' | 'city'>
 );
 
 export type RecruiterProfileFullFragment = (
@@ -1606,6 +1609,7 @@ export type SendRecruiterProfileToReviewMutation = (
 export type UpdateRecruiterProfileMutationVariables = Exact<{
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
 }>;
 
 
@@ -2171,6 +2175,7 @@ export const RecruiterProfileBaseFragmentDoc = gql`
   companyName
   slug
   lastActionTime
+  city
 }
     `;
 export const RecruiterProfileUserFragmentDoc = gql`
@@ -2353,8 +2358,8 @@ export const SendRecruiterProfileToReviewDocument = gql`
 }
     ${RecruiterProfileBaseFragmentDoc}`;
 export const UpdateRecruiterProfileDocument = gql`
-    mutation updateRecruiterProfile($position: String, $companyName: String) {
-  updateRecruiterProfile(position: $position, companyName: $companyName) {
+    mutation updateRecruiterProfile($position: String, $companyName: String, $city: String) {
+  updateRecruiterProfile(position: $position, companyName: $companyName, city: $city) {
     ...RecruiterProfileBase
   }
 }

@@ -28,6 +28,10 @@ export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
         name: RecruiterProfileMetaItems.CompanyName,
         text: getFilledValue(profile.companyName),
       },
+      ...(profile.city ? [{
+        name: RecruiterProfileMetaItems.City,
+        text: getFilledValue(profile.city),
+      }] : []),
     ];
   },
   [profile],
