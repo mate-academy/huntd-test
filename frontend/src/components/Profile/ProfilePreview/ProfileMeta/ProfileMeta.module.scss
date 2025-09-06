@@ -1,9 +1,11 @@
 @import "utils";
 
 .metaWrapper {
+  --meta-icon-size: 0.75em; 
+  
   @include icon-styles {
-    width: 18px;
-    height: 18px;
+    width: var(--meta-icon-size);
+    height: var(--meta-icon-size);
     margin-right: rem-calc(4);
     color: $c-semidark-chocolate;
   }
