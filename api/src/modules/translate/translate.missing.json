@@ -337,6 +337,12 @@
   },
   {
     "language": "en",
+    "namespace": "profile",
+    "code": "recruiter_profile_templates_tab",
+    "value": "recruiter_profile_templates_tab"
+  },
+  {
+    "language": "en",
     "namespace": "validations",
     "code": "Invalid credentials",
     "value": "Invalid credentials"
