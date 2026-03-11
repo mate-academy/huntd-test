@@ -25,6 +25,10 @@
       "type": "string",
       "required": false
     },
+    "city": {
+      "type": "string",
+      "required": false
+    },
     "company_name": {
       "type": "string",
       "required": false
