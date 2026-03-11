@@ -992,6 +992,7 @@ export type RecruiterProfile = {
   status: RecruiterProfileStatus;
   rejectReason?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
   user?: Maybe<User>;
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
