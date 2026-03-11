@@ -6,6 +6,7 @@ import { RecruiterProfileMetaItems } from '../recruiterProfile.typedefs';
 export interface MetaItem {
   name: RecruiterProfileMetaItems,
   text: string,
+  isLocation?: boolean,
 }
 
 interface UseRecruiterProfileMetaItems {
@@ -19,7 +20,7 @@ export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
       return [];
     }
 
-    return [
+    const items = [
       {
         name: RecruiterProfileMetaItems.Position,
         text: getFilledValue(profile.position),
@@ -29,6 +30,17 @@ export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
         text: getFilledValue(profile.companyName),
       },
     ];
+
+    if (profile.city != null) {
+      items.push({
+        name: RecruiterProfileMetaItems.City,
+        // text: `<IconLocation />${getFilledValue(profile.city)}`,
+        text: getFilledValue(profile.city),
+        isLocation: true,
+      });
+    }
+
+    return items;
   },
   [profile],
 );
