@@ -26,9 +26,7 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
   @Index('recruiter_profiles_user_id')
   @ForeignKey(() => User)
   @AllowNull(false)
-  @Column({
-    field: 'user_id',
-  })
+  @Column({ field: 'user_id' })
   userId: number;
 
   @BelongsTo(() => User)
@@ -40,31 +38,27 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
   })
   status: RecruiterProfileStatusEnum;
 
-  @Column({
-    field: 'reject_reason',
-  })
+  @Column({ field: 'reject_reason' })
   rejectReason: string;
 
   @Column
   position: string;
 
-  @Column({
-    field: 'company_name',
-  })
+  @Column({ field: 'company_name' })
   companyName: string;
 
   @Unique
   @Column
   slug: string
 
-  @Column({
-    field: 'statuses_notification_sent_at',
-  })
+  @Column({ field: 'statuses_notification_sent_at' })
   statusesNotificationSentAt: Date
 
   @DeletedAt
-  @Column({
-    field: 'deleted_at',
-  })
+  @Column({ field: 'deleted_at' })
   deletedAt: Date
+
+  @AllowNull(true)
+  @Column({ type: DataType.STRING(255), field: 'city' })
+  city: string;
 }
