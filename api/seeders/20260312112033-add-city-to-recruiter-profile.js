@@ -5,7 +5,7 @@ module.exports = {
     await queryInterface.bulkUpdate(
       'recruiter_profiles',
       { city: 'Kyiv' },
-      { city: null }
+      { id: 455 }
     );
   },
 
@@ -13,7 +13,7 @@ module.exports = {
     await queryInterface.bulkUpdate(
       'recruiter_profiles',
       { city: null },
-      {}
+      { id: 455 }
     );
   },
 };
