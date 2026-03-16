@@ -1001,17 +1001,18 @@ export enum RecruiterProfileStatus {
 }
 
 export type RecruiterProfile = {
-  __typename?: 'RecruiterProfile';
-  id: Scalars['Int'];
-  slug?: Maybe<Scalars['String']>;
+  __typename?: "RecruiterProfile";
+  id: Scalars["Int"];
+  slug?: Maybe<Scalars["String"]>;
   status: RecruiterProfileStatus;
-  rejectReason?: Maybe<Scalars['String']>;
-  position?: Maybe<Scalars['String']>;
-  companyName?: Maybe<Scalars['String']>;
+  rejectReason?: Maybe<Scalars["String"]>;
+  position?: Maybe<Scalars["String"]>;
+  companyName?: Maybe<Scalars["String"]>;
   user?: Maybe<User>;
-  lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
-  statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
+  lastActionTime?: Maybe<Scalars["GraphQLDateTime"]>;
+  statusesNotificationSentAt?: Maybe<Scalars["GraphQLDateTime"]>;
   activeConnectionWithCandidate?: Maybe<ProfileConnection>;
+  city?: Maybe<Scalars["String"]>;
 };
 
 
@@ -2170,7 +2171,7 @@ export type ProfileConnectionUserMetaBaseFragment = (
 
 export type RecruiterProfileBaseFragment = (
   { __typename?: 'RecruiterProfile' }
-  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'slug' | 'lastActionTime'>
+  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'slug' | 'lastActionTime' | 'city'>
 );
 
 export type RecruiterProfileFullFragment = (
@@ -3789,6 +3790,7 @@ export const RecruiterProfileBaseFragmentDoc = /*#__PURE__*/ gql`
   companyName
   slug
   lastActionTime
+  city
 }
     `;
 export const ProfileConnectionWithProfilesFragmentDoc = /*#__PURE__*/ gql`
