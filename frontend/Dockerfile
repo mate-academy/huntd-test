@@ -8,7 +8,7 @@ COPY package*.json ./
 ARG NPM_TOKEN
 RUN npm config set '//registry.npmjs.org/:_authToken' "$NPM_TOKEN"
 RUN echo "npm user is >>> $(npm whoami) <<<"
-RUN npm ci
+RUN npm install
 
 # Bundle app source
 COPY . .

@@ -46,6 +46,12 @@
   }
 }
 
+.recruiterMetaItemWithIcon {
+  @extend .recruiterMetaItem;
+  display: inline-flex;
+  align-items: center;
+}
+
 .divider {
   width: rem-calc(4);
   height: rem-calc(4);
