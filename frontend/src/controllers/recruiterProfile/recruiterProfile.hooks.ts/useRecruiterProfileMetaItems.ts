@@ -28,7 +28,11 @@ export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
         name: RecruiterProfileMetaItems.CompanyName,
         text: getFilledValue(profile.companyName),
       },
-    ];
+      {
+        name: RecruiterProfileMetaItems.City,
+        text: getFilledValue(profile.city),
+      },
+    ].filter((item) => item.text.length > 0);
   },
   [profile],
 );
