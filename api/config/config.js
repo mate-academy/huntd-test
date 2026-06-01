@@ -3,6 +3,7 @@ const config = {
   password: process.env.POSTGRES_PWD,
   database: process.env.POSTGRES_DB,
   host: process.env.POSTGRES_HOST,
+  port: process.env.POSTGRES_PORT || 5432,
   dialectOptions: {
     connectTimeout: 10000,
   },
