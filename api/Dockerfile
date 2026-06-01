@@ -1,4 +1,4 @@
-FROM node:12 AS builder
+FROM node:6 AS builder
 
 # Create app directory
 WORKDIR /usr/src/api

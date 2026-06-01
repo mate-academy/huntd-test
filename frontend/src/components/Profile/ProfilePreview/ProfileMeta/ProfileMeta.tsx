@@ -6,6 +6,7 @@ import typography from '@/ui/typography/typography.module.scss';
 import { CandidateProfileMetaItems } from '@/controllers/candidateProfile/candidateProfile.typedefs';
 import { IconLocation } from '@/ui/icons/general/IconLocation';
 import styles from './ProfileMeta.module.scss';
+import {RecruiterProfileMetaItems} from '@/controllers/recruiterProfile/recruiterProfile.typedefs';
 
 interface Props {
   items: RecruiterMetaItem[] | CandidateMetaItem[]
@@ -16,6 +17,19 @@ export const ProfileMeta = React.memo<Props>((props) => {
   return (
     <ul className={styles.metaWrapper}>
       {items.map((item) => {
+
+      if (item.name === CandidateProfileMetaItems.Location
+          || item.name === RecruiterProfileMetaItems.City) {
+          return (
+            <React.Fragment key={item.name}>
+              <IconLocation />
+              <li className={cn(styles.metaItem, typography.smallText, 'c-semidark-chocolate')}>
+                {item.text}
+                <span className={styles.divider} />
+              </li>
+            </React.Fragment>
+          );
+        }
         if (item.name === CandidateProfileMetaItems.Location) {
           return (
             <React.Fragment key={item.name}>

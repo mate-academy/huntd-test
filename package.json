@@ -4,7 +4,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:frontend": "npm run lint --prefix frontend",
     "lint:api": "npm run lint --prefix api",
-    "lint:styles:frontend": "stylelint frontend/**/*.scss --fix",
+    "lint:styles:frontend": "stylelint 'frontend/**/*.scss' --fix",
     "lint": "concurrently \"npm run lint:frontend\" \"npm run lint:api\"",
     "graphql:cms:generate": "graphql-codegen --config graphql-codegen.cms.yml",
     "graphql:cms:watch": "graphql-codegen --config graphql-codegen.cms.yml --watch",

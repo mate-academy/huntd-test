@@ -9,16 +9,19 @@ services:
       context: ./nginx
     image: huntd/huntd-nginx:${TAG}
     ports:
-      - 80:80
-      - 443:443
+      - 8080:80
+      - 8443:443
     depends_on:
       - api
       - frontend
       - db
     volumes:
       - ./nginx:/etc/nginx:cached
-      - ./nginx/nginx.local.conf:/etc/nginx/nginx.conf
       - ./nginx/local-ssl:/etc/nginx/ssl:cached
+      - ./nginx/nginx.local.conf:/etc/nginx/nginx.conf
+      # - ./nginx:/etc/nginx:cached
+      #- ./nginx/nginx.local.conf:/etc/nginx/nginx.conf
+      #- ./nginx/local-ssl:/etc/nginx/ssl:cached
   ############################### REDIS ###############################
   # redis
   redis:
