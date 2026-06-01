@@ -19,4 +19,7 @@ node_modules
 # Ignore deploy logs
 deploy_logs.json
 
+# Ignore npmrc
+.npmrc
+
 temp
