@@ -49,13 +49,14 @@ export const CompanyInfoForm = () => {
   ]);
 
   const onSubmit = handleSubmit(async (data) => {
-    const { position, companyName } = data;
+    const { position, companyName, city } = data;
 
     try {
       await updateProfile({
         variables: {
           position,
           companyName,
+          city,
         },
         async update() {
           analytics.setUserProperties({
@@ -160,6 +161,27 @@ export const CompanyInfoForm = () => {
                           message: 'company_is_required',
                         },
                       }}
+                    />
+                  )}
+                />
+              </div>
+
+              <div className="cell large-6 large-offset-3">
+                <FormField
+                  label={{
+                    for: 'city',
+                    text: 'City',
+                  }}
+                  error={errors.city}
+                  disabled={loading}
+                  className="mb-40"
+                  renderInput={(props) => (
+                    <InputText
+                      {...props}
+                      defaultValue={profile?.city || ''}
+                      name="city"
+                      control={control}
+                      placeholder="City"
                     />
                   )}
                 />

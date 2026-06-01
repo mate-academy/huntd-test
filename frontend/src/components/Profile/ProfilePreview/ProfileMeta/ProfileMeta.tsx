@@ -5,6 +5,7 @@ import { MetaItem as CandidateMetaItem } from '@/controllers/candidateProfile/ca
 import typography from '@/ui/typography/typography.module.scss';
 import { CandidateProfileMetaItems } from '@/controllers/candidateProfile/candidateProfile.typedefs';
 import { IconLocation } from '@/ui/icons/general/IconLocation';
+import { RecruiterProfileMetaItems } from '@/controllers/recruiterProfile/recruiterProfile.typedefs';
 import styles from './ProfileMeta.module.scss';
 
 interface Props {
@@ -16,15 +17,18 @@ export const ProfileMeta = React.memo<Props>((props) => {
   return (
     <ul className={styles.metaWrapper}>
       {items.map((item) => {
-        if (item.name === CandidateProfileMetaItems.Location) {
+        const isLocation = item.name === CandidateProfileMetaItems.Location
+          || item.name === RecruiterProfileMetaItems.Location as string;
+
+        if (isLocation) {
           return (
-            <React.Fragment key={item.name}>
-              <IconLocation />
-              <li className={cn(styles.metaItem, typography.smallText, 'c-semidark-chocolate')}>
-                {item.text}
-                <span className={styles.divider} />
-              </li>
-            </React.Fragment>
+            <li className={cn(styles.metaItem, typography.smallText, 'c-semidark-chocolate')} key={item.name}>
+              <span style={{ marginRight: '4px', display: 'flex', alignItems: 'center' }}>
+                <IconLocation />
+              </span>
+              {item.text}
+              <span className={styles.divider} />
+            </li>
           );
         }
 
